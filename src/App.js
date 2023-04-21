@@ -5,13 +5,10 @@ import CardsView from './views/CardsView';
 import DetailView from './views/DetailView';
 import MyCardsView from './views/MyCardsView';
 import { routes } from './routes';
-// import { useState } from 'react';
-
 
 function App() {
 
   const {root, detailView, myCardsView} = routes;
-  // const [myCards, setMyCards] = useState([]); 
 
   return (
     <>

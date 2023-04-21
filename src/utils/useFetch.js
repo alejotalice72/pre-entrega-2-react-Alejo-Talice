@@ -1,10 +1,12 @@
+// Datos desde array
 import { useEffect, useState } from 'react';
 
 const useFetch = (url) => {
     const [data, setData] = useState([]);
+    const [dataFromObject, setDataFromObject] = useState({});
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState({});
-
+    
     useEffect (() => {
         
         setLoading(true);
@@ -13,6 +15,7 @@ const useFetch = (url) => {
         }).then((json) => {
             const characters = json.results;
             setData(characters);
+            setDataFromObject(json);
             setLoading(false);
         }).catch((error) => {
             setError(error);
@@ -20,7 +23,7 @@ const useFetch = (url) => {
         
     },[url])
     
-    return [data, loading, error];
+    return [data, dataFromObject, loading, error];
 
 };
 

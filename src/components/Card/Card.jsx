@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Card = ({title, image, species, gender}) => {
+const Card = ({id, title, image, species, gender, handleInfo}) => {
   
   const width = {width:"18rem"};
-  
+
   return (
     <>
       <div className="card m-4 shadow-lg" style={width}>
@@ -13,7 +13,7 @@ const Card = ({title, image, species, gender}) => {
           <p className="card-text">Especie: {species} Genero: {gender} </p>
           <div className='d-flex justify-content-around'>
             <button className="btn btn-success">Guardar</button>
-            <button className="btn btn-outline-primary">+ Detalles</button>
+            <button className="btn btn-outline-primary" onClick={ ()=>{handleInfo(id)} }>+ Detalles</button>
           </div>
         </div>
       </div>
